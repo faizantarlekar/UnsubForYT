@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Mass Unsubscribe for YouTube",
+  "version": "2.0.0",
+  "description": "Open YouTube, click the extension, tick the channels you want gone and unsubscribe from them in one go.",
+  "minimum_chrome_version": "111",
+  "permissions": [],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_title": "Mass Unsubscribe",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["inject.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["bridge.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

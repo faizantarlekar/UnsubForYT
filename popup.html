@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="top">
+    <strong>Mass Unsubscribe</strong>
+    <span id="total"></span>
+    <button id="refresh" title="Reload list" aria-label="Reload list">&#8635;</button>
+  </div>
+
+  <div id="problem" hidden>
+    <p id="problemText"></p>
+    <button id="problemBtn" class="primary"></button>
+  </div>
+
+  <div id="main" hidden>
+    <input id="search" type="search" placeholder="Search channels…">
+    <label id="tools">
+      <input type="checkbox" id="selAll">
+      <span id="selAllText">Select all</span>
+    </label>
+    <div id="msg"></div>
+    <ul id="list"></ul>
+    <div id="foot">
+      <div id="barWrap" hidden><div id="fill"></div></div>
+      <div id="footRow">
+        <span id="count">0 selected</span>
+        <button id="stop" hidden>Stop</button>
+        <button id="go" class="danger" disabled>Unsubscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
